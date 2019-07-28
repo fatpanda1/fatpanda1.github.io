@@ -5,19 +5,29 @@
   
 
   
-  <title>Java-String | Hexo</title>
+  <title>Java常用API---String | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Java常用API——String我们首先看一下官方文档中的介绍： String类代表字符串。 Java程序中的所有字符串文字（例如”abc” ）都被实现为此类的实例。字符串不变; 它们的值在创建后不能被更改。 字符串缓冲区支持可变字符串。 因为String对象是不可变的，它们可以被共享。 例如：  String str = &amp;quot;abc&amp;quot;; 相当于：  char data[] =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java-String">
+<meta property="og:title" content="Java常用API---String">
 <meta property="og:url" content="http://yoursite.com/2019/07/28/Java-String/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Java常用API——String我们首先看一下官方文档中的介绍： String类代表字符串。 Java程序中的所有字符串文字（例如”abc” ）都被实现为此类的实例。字符串不变; 它们的值在创建后不能被更改。 字符串缓冲区支持可变字符串。 因为String对象是不可变的，它们可以被共享。 例如：  String str = &amp;quot;abc&amp;quot;; 相当于：  char data[] =">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T04:17:00.660Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190728132230672.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190728132729147.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190728141531722.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190728145425230.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190728152104136.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190728152844943.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019072815313936.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190728161252365.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190728161508159.png">
+<meta property="og:updated_time" content="2019-07-28T08:37:37.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java-String">
+<meta name="twitter:title" content="Java常用API---String">
 <meta name="twitter:description" content="Java常用API——String我们首先看一下官方文档中的介绍： String类代表字符串。 Java程序中的所有字符串文字（例如”abc” ）都被实现为此类的实例。字符串不变; 它们的值在创建后不能被更改。 字符串缓冲区支持可变字符串。 因为String对象是不可变的，它们可以被共享。 例如：  String str = &amp;quot;abc&amp;quot;; 相当于：  char data[] =">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190728132230672.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -67,7 +77,7 @@
         <section id="main"><article id="post-Java-String" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/28/Java-String/" class="article-date">
-  <time datetime="2019-07-28T04:16:26.000Z" itemprop="datePublished">2019-07-28</time>
+  <time datetime="2019-07-27T16:00:00.000Z" itemprop="datePublished">2019-07-28</time>
 </a>
     
   </div>
@@ -78,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Java-String
+      Java常用API---String
     </h1>
   
 
@@ -97,16 +107,67 @@ System.out.println(&quot;abc&quot; + cde);
 String c = &quot;abc&quot;.substring(2,3);
 String d = cde.substring(1, 2);</code></pre><hr>
 <p>字符串可以理解为简化的字符数组，但其本质上是作为对象来处理的。</p>
-<h2 id="声明和创建字符串"><a href="#声明和创建字符串" class="headerlink" title="声明和创建字符串"></a><strong>声明和创建字符串</strong></h2><p>最基本的方法是直接赋值</p>
+<h2 id="声明和创建字符串"><a href="#声明和创建字符串" class="headerlink" title="声明和创建字符串"></a>声明和创建字符串</h2><p>最基本的方法是直接赋值</p>
 <pre><code>String str = &quot;HelloWorld&quot;;</code></pre><p>既然是对象，那么也可以利用构造函数进行赋值</p>
 <pre><code>char[] iAmChar = {&apos;你&apos;,&apos;好&apos;};
 String str1 = new String(iAmChar);
 String str = new String(&quot;HelloWorld&quot;);</code></pre><p>字符串保存的内容都要放到双引号””中</p>
-<h2 id="连接字符串"><a href="#连接字符串" class="headerlink" title="连接字符串"></a><strong>连接字符串</strong></h2>
+<h4 id="使用直接赋值和构造函数赋值的区别"><a href="#使用直接赋值和构造函数赋值的区别" class="headerlink" title="使用直接赋值和构造函数赋值的区别"></a>使用直接赋值和构造函数赋值的区别</h4><p>首先看一个例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="keyword">new</span> String(<span class="string">"123"</span>);</span><br><span class="line">String str1 = <span class="string">"123"</span>;</span><br><span class="line">System.out.println(str == str1);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190728132230672.png" alt="img1"><br>我给str和str1的赋值一样，都是123，但使用==关键字比较却不相同，说明使用构造函数赋值和直接赋值确实存在差异。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"123"</span>;</span><br><span class="line">      String str1 = <span class="string">"123"</span>;</span><br><span class="line">      System.out.println(str == str1);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190728132729147.png" alt="img2"><br>而将str和str1都使用直接赋值”123”，得到的比较结果确实相同。</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><blockquote>
+<p>使用直接赋值的方式，创建出来的字符串是存放在方法区中的常量池中：</p>
+<p>使用new的方式创建出来的字符串是存放在堆内存中</p>
+<p>使用直接赋值的方式创建的字符串，会在常量池中查找该字符串是否存在，如果存在则直接使用该地址如 果不存在，则在常量池中创建该字符串，并赋值</p>
+<p>如果使用直接赋值的方式对字符重新赋值，则会拿新的内容去常量池中查找，看是否存在，如果不存在，创建</p>
+</blockquote>
+<h2 id="连接字符串"><a href="#连接字符串" class="headerlink" title="连接字符串"></a>连接字符串</h2><p>连接字符串顾名思义就是将两个字符串连接起来。字符串之间使用“+”进行连接。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"你好，我是"</span>;</span><br><span class="line">String str1 = <span class="string">"王铁蛋"</span>;</span><br><span class="line"><span class="comment">//使用 + 连接str与str1,并将连接后的值赋给str3,这样str3的值就是"你好，我是王铁蛋"</span></span><br><span class="line">String str3 = str + str1;</span><br><span class="line"><span class="comment">//也可以直接连接两个字符串内容</span></span><br><span class="line">str3 = <span class="string">"你好，我是"</span> + <span class="string">"王铁蛋"</span>;</span><br><span class="line"><span class="comment">//得到的值与上面一样</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><blockquote>
+<p>Java中一句相连的字符串不能分两句写，例如：<br>System.out.println(“Hello<br>world”);<br>这种写法是错误的，如果一个字符串太长，可以使用+连接，例如：<br>System.out.println(“Hello” +<br>“world”);</p>
+</blockquote>
+<h2 id="使用equals-Object-obj-比较字符串内容是否相同"><a href="#使用equals-Object-obj-比较字符串内容是否相同" class="headerlink" title="使用equals(Object obj)比较字符串内容是否相同"></a>使用equals(Object obj)比较字符串内容是否相同</h2><p>还是一个相同的例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"123"</span>;</span><br><span class="line">String str1 = <span class="string">"123"</span>;</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">"123"</span>);</span><br><span class="line">String str3 = <span class="keyword">new</span> String(<span class="string">"123"</span>);</span><br><span class="line">System.out.println(str2 == str3);</span><br><span class="line">System.out.println(str1 == str2);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190728141531722.png" alt="img_equals1"><br>从输出结果中可以发现，不仅是直接赋值的字符串和使用构造方法赋值的字符串之间存在差异，两个使用构造方法赋相同值的字符串比较之后返回的还是一个false。</p>
+<p>原理上面已经讲过，因为使用构造函数给String赋值是将字符串以对象形式放在堆内存中，而每使用一次构造函数在堆内存中就会新开辟一块内存空间用来保存对象，而使用”==”比较时是将两个对象的内存地址进行比较，所以会输出一个false。</p>
+<p>为了避免这种情况，在比较字符串时可以使用equals()方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"123"</span>;</span><br><span class="line">        String str1 = <span class="string">"123"</span>;</span><br><span class="line">        String str2 = <span class="keyword">new</span> String(<span class="string">"123"</span>);</span><br><span class="line">        String str3 = <span class="keyword">new</span> String(<span class="string">"456"</span>);</span><br><span class="line">        String str4 = <span class="keyword">new</span> String(<span class="string">"123"</span>);</span><br><span class="line">        System.out.println(str.equals(str1));</span><br><span class="line">        System.out.println(str.equals(str2));</span><br><span class="line">        System.out.println(str.equals(str3));</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：<br><img src="https://img-blog.csdnimg.cn/20190728145425230.png" alt="在这里插入图片描述"><br>使用方法如上，equals()方法会返回boolean类型的值来表示两字符串是否相同，true代表相同，false代表不相同。</p>
+<h2 id="使用equalslgnoreCase-进行比较字符串内容是否相同"><a href="#使用equalslgnoreCase-进行比较字符串内容是否相同" class="headerlink" title="使用equalslgnoreCase()进行比较字符串内容是否相同"></a>使用equalslgnoreCase()进行比较字符串内容是否相同</h2><p>equalslgnore方法是在忽略字母大小写的情况下比较两字符串是否相等，返回值类型为boolean，需要将对比的字符串作为参数在调用时传值。<br>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"ABC"</span>;</span><br><span class="line">        String str1 = <span class="string">"aBc"</span>;</span><br><span class="line">        System.out.println(str.equalsIgnoreCase(str1));</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：<br><img src="https://img-blog.csdnimg.cn/20190728152104136.png" alt="在这里插入图片描述"></p>
+<h2 id="使用contains-方法判断是否包含指定的字符串"><a href="#使用contains-方法判断是否包含指定的字符串" class="headerlink" title="使用contains()方法判断是否包含指定的字符串"></a>使用contains()方法判断是否包含指定的字符串</h2><p>contains方法返回值为boolean，需要将指定字符串信息作为参数在调用时传值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"abcdefg"</span>;</span><br><span class="line">        System.out.println(str.contains(<span class="string">"adf"</span>));</span><br><span class="line">        System.out.println(str.contains(<span class="string">"efg"</span>));</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：<br><img src="https://img-blog.csdnimg.cn/20190728152844943.png" alt="在这里插入图片描述"></p>
+<h2 id="使用startsWith-方法判断字符串以什么开头"><a href="#使用startsWith-方法判断字符串以什么开头" class="headerlink" title="使用startsWith()方法判断字符串以什么开头"></a>使用startsWith()方法判断字符串以什么开头</h2><p>startsWith()方法返回值为boolean，需要以字符串作为参数<br>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"abcdefg"</span>;</span><br><span class="line">System.out.println(str.startsWith(<span class="string">"abc"</span>));</span><br><span class="line">System.out.println(str.startsWith(<span class="string">"efg"</span>));</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：<br><img src="https://img-blog.csdnimg.cn/2019072815313936.png" alt="在这里插入图片描述"></p>
+<h2 id="使用endsWith-判断字符串以什么结尾"><a href="#使用endsWith-判断字符串以什么结尾" class="headerlink" title="使用endsWith()判断字符串以什么结尾"></a>使用endsWith()判断字符串以什么结尾</h2><p>endsWith()方法返回值为boolean，需要以字符串作为参数<br>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"abcdefg"</span>;</span><br><span class="line">System.out.println(str.endsWith(<span class="string">"abc"</span>));</span><br><span class="line">System.out.println(str.endsWith(<span class="string">"efg"</span>));</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：<br><img src="https://img-blog.csdnimg.cn/20190728161252365.png" alt="在这里插入图片描述"></p>
+<h2 id="使用isEmpty-判断字符串是否为空"><a href="#使用isEmpty-判断字符串是否为空" class="headerlink" title="使用isEmpty()判断字符串是否为空"></a>使用isEmpty()判断字符串是否为空</h2><p>isEmpty()方法返回值为boolean.<br>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"abcdefg"</span>;</span><br><span class="line">String str1 = <span class="string">""</span>;</span><br><span class="line">System.out.println(str.isEmpty());</span><br><span class="line">System.out.println(str1.isEmpty());</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：<br><img src="https://img-blog.csdnimg.cn/20190728161508159.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>参考文献：<br>Java™ Platform, Standard Edition 8 API Specification<br>Java从入门到精通（明日科技出版）</p>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/28/Java-String/" data-id="cjymgcmiq00000oqm0f0qqkco" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/28/Java-String/" data-id="cjympo9el000118qm2u1cesk0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +216,7 @@ String str = new String(&quot;HelloWorld&quot;);</code></pre><p>字符串保存�
       <ul>
         
           <li>
-            <a href="/2019/07/28/Java-String/">Java-String</a>
+            <a href="/2019/07/28/Java-String/">Java常用API---String</a>
           </li>
         
           <li>
