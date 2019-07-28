@@ -62,6 +62,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java-String" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/28/Java-String/" class="article-date">
+  <time datetime="2019-07-28T04:16:26.000Z" itemprop="datePublished">2019-07-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/28/Java-String/">Java-String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java常用API——String"><a href="#Java常用API——String" class="headerlink" title="Java常用API——String"></a>Java常用API——String</h1><p>我们首先看一下官方文档中的介绍：</p>
+<p>String类代表字符串。 Java程序中的所有字符串文字（例如”abc” ）都被实现为此类的实例。<br>字符串不变; 它们的值在创建后不能被更改。 字符串缓冲区支持可变字符串。 因为String对象是不可变的，它们可以被共享。 例如： </p>
+<pre><code>String str = &quot;abc&quot;;</code></pre><p> 相当于： </p>
+<pre><code>char data[] = {&apos;a&apos;, &apos;b&apos;, &apos;c&apos;};
+String str = new String(data);</code></pre><p> 以下是一些如何使用字符串的示例： </p>
+<pre><code>System.out.println(&quot;abc&quot;);
+String cde = &quot;cde&quot;;
+System.out.println(&quot;abc&quot; + cde);
+String c = &quot;abc&quot;.substring(2,3);
+String d = cde.substring(1, 2);</code></pre><hr>
+<p>字符串可以理解为简化的字符数组，但其本质上是作为对象来处理的。</p>
+<h2 id="声明和创建字符串"><a href="#声明和创建字符串" class="headerlink" title="声明和创建字符串"></a><strong>声明和创建字符串</strong></h2><p>最基本的方法是直接赋值</p>
+<pre><code>String str = &quot;HelloWorld&quot;;</code></pre><p>既然是对象，那么也可以利用构造函数进行赋值</p>
+<pre><code>char[] iAmChar = {&apos;你&apos;,&apos;好&apos;};
+String str1 = new String(iAmChar);
+String str = new String(&quot;HelloWorld&quot;);</code></pre><p>字符串保存的内容都要放到双引号””中</p>
+<h2 id="连接字符串"><a href="#连接字符串" class="headerlink" title="连接字符串"></a><strong>连接字符串</strong></h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/28/Java-String/" data-id="cjymgcmiq00000oqm0f0qqkco" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-MarkDownDemo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/27/MarkDownDemo/" class="article-date">
@@ -115,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/27/MarkDownDemo/" data-id="cjylkgohx0000voqm8xjrol8b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/27/MarkDownDemo/" data-id="cjymgcmiv00010oqm8p47rt2z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/26/hello-world/" data-id="cjylkgoil0001voqm8f8e5s0d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/26/hello-world/" data-id="cjymgcmj500020oqmtuc9iwk9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,6 +255,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/07/28/Java-String/">Java-String</a>
+          </li>
         
           <li>
             <a href="/2019/07/27/MarkDownDemo/">(no title)</a>
